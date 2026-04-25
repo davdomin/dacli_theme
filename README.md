@@ -1,2 +1,2 @@
 # dacli_theme
-Tema wordpress para dacli.
+Tema wordpress para dacli
