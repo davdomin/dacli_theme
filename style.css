@@ -1,0 +1,32 @@
+/*
+Theme Name: dAcli Sistemas
+Theme URI: https://www.dacli.com/
+Author: Tu Nombre / David / Mario
+Description: Sistema de atención integral para laboratorios clínicos.
+Version: 1.0
+Text Domain: dacli
+*/
+
+/* --- VARIABLES DE MARCA DACLI --- */
+:root {
+    --azul-dacli: #2D7EC4;
+    --azul-profundo: #2A3F7B;
+    --gris-neutro: #F6F7FC;
+    --azul-glaciar: #B2C3E6;
+    --turquesa-medico: #2DC4B5;
+    --blanco: #FFFFFF;
+}
+
+/* --- ESTILOS BASE --- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--gris-neutro);
+    color: var(--azul-profundo);
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
