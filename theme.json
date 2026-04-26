@@ -1,0 +1,50 @@
+{
+	"version": 2,
+	"settings": {
+		"appearanceTools": true,
+		"spacing": {
+			"blockGap": true,
+			"margin": true,
+			"padding": true,
+			"units": ["%", "px", "em", "rem"]
+		},
+		"layout": {
+			"contentSize": "760px",
+			"wideSize": "1160px"
+		},
+		"color": {
+			"palette": [
+				{
+					"name": "Azul Dacli",
+					"slug": "azul-dacli",
+					"color": "#2D7EC4"
+				},
+				{
+					"name": "Azul Profundo",
+					"slug": "azul-profundo",
+					"color": "#2A3F7B"
+				},
+				{
+					"name": "Gris Neutro",
+					"slug": "gris-neutro",
+					"color": "#F6F7FC"
+				},
+				{
+					"name": "Azul Glaciar",
+					"slug": "azul-glaciar",
+					"color": "#B2C3E6"
+				},
+				{
+					"name": "Turquesa Médico",
+					"slug": "turquesa",
+					"color": "#2DC4B5"
+				},
+				{
+					"name": "Blanco Puro",
+					"slug": "blanco",
+					"color": "#FFFFFF"
+				}
+			]
+		}
+	}
+}

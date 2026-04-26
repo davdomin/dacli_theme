@@ -1,2 +1,2 @@
-# dacli_theme
+# ale8bits
 Tema wordpress para dacli

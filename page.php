@@ -1,29 +1,36 @@
-<?php get_header(); ?>
+<?php
+/**
+ * Theme Page Section for our theme.
+ *
+ * @package ale8bits
+ * @subpackage DacliWeb
+ * @since DacliWeb 1.0
+ */
+get_header(); ?>
 
-<main id="main-content" class="site-main page-standard">
-    <?php while ( have_posts() ) : the_post(); ?>
+	<?php do_action( 'spacious_before_body_content' ); ?>
 
-        <section class="page-banner" style="background-color: var(--azul-dacli); color: var(--blanco); padding: 60px 0;">
-            <div class="container">
-                <h1 class="entry-title"><?php the_title(); ?></h1>
-            </div>
-        </section>
+	<div id="primary">
+		<div id="content" class="clearfix">
+			<?php while ( have_posts() ) : the_post(); ?>
 
-        <article id="post-<?php the_ID(); ?>" <?php post_class('container section-padding'); ?> style="background-color: var(--blanco); margin-top: -30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); padding: 40px;">
-            <div class="entry-content">
-                <?php 
-                the_content(); 
-                
-                // Por si decides dividir una página larga en varias partes
-                wp_link_pages( array(
-                    'before' => '<div class="page-links">' . esc_html__( 'Páginas:', 'dacli' ),
-                    'after'  => '</div>',
-                ) );
-                ?>
-            </div>
-        </article>
+				<?php get_template_part( 'content', 'page' ); ?>
 
-    <?php endwhile; ?>
-</main>
+				<?php
+					do_action( 'spacious_before_comments_template' );
+					// If comments are open or we have at least one comment, load up the comment template
+					if ( comments_open() || '0' != get_comments_number() )
+						comments_template();
+	      		do_action ( 'spacious_after_comments_template' );
+				?>
+
+			<?php endwhile; ?>
+
+		</div><!-- #content -->
+	</div><!-- #primary -->
+
+	<?php spacious_sidebar_select(); ?>
+
+	<?php do_action( 'spacious_after_body_content' ); ?>
 
 <?php get_footer(); ?>

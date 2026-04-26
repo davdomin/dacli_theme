@@ -1,29 +1,62 @@
-<article id="post-<?php the_ID(); ?>" <?php post_class('blog-card'); ?> style="background: var(--blanco); border-radius: 8px; overflow: hidden; margin-bottom: 30px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); transition: transform 0.3s ease;">
-    
-    <?php if ( has_post_thumbnail() ) : ?>
-        <a href="<?php the_permalink(); ?>" class="post-thumbnail-link">
-            <div class="card-image" style="height: 200px; overflow: hidden;">
-                <?php the_post_thumbnail('medium_large', array('style' => 'width:100%; height:auto; object-fit:cover;')); ?>
-            </div>
-        </a>
-    <?php endif; ?>
+<?php
+/**
+ * The template used for displaying page content in page.php
+ *
+ * @package ale8bits
+ * @subpackage DacliWeb
+ * @since DacliWeb 1.0
+ */
+?>
 
-    <div class="card-body" style="padding: 20px;">
-        <header class="entry-header">
-            <div class="entry-meta" style="font-size: 0.8rem; color: var(--azul-glaciar); margin-bottom: 10px;">
-                <?php echo get_the_date(); ?>
-            </div>
-            <?php the_title( sprintf( '<h2 class="entry-title" style="font-size: 1.4rem; margin-bottom: 15px;"><a href="%s" rel="bookmark" style="color: var(--azul-profundo); text-decoration: none;">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
-        </header>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<?php do_action( 'spacious_before_post_content' ); ?>
 
-        <div class="entry-summary" style="font-size: 0.95rem; color: #555; margin-bottom: 20px;">
-            <?php the_excerpt(); ?>
-        </div>
+	<?php
+	if( !is_single() ) {
+	?>
+	<header class="entry-header">
+	<h2 class="entry-title">
+		<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute();?>"><?php the_title(); ?></a>
+	</h2><!-- .entry-title -->
+	</header>
+	<?php
+	}
+	?>
 
-        <footer class="entry-footer">
-            <a href="<?php the_permalink(); ?>" class="read-more" style="color: var(--azul-dacli); font-weight: bold; text-decoration: none; font-size: 0.9rem;">
-                Leer más &rarr;
-            </a>
-        </footer>
-    </div>
+	<?php
+		if( has_post_thumbnail() ) {
+			if( get_theme_mod( 'spacious_site_layout', 'box_1218px' ) == 'box_1218px' || get_theme_mod( 'spacious_site_layout', 'box_1218px' ) == 'wide_1218px' ) {
+				$featured = 'featured-blog-large';
+			}
+			elseif( get_theme_mod( 'spacious_site_layout', 'box_1218px' ) == 'box_978px' || get_theme_mod( 'spacious_site_layout', 'box_1218px' ) == 'wide_978px' ) {
+				$featured = 'featured';
+			}
+			$image           = '';
+			$title_attribute = get_the_title( $post->ID );
+			$thumb_id        = get_post_thumbnail_id( get_the_ID() );
+			$img_altr        = get_post_meta( $thumb_id, '_wp_attachment_image_alt', true );
+			$img_alt         = ! empty( $img_altr ) ? $img_altr : $title_attribute;
+			$image           .= '<figure class="post-featured-image">';
+			$image           .= '<a href="' . get_permalink() . '" title="' . the_title( '', '', false ) . '">';
+			$image           .= get_the_post_thumbnail( $post->ID, $featured, array(
+					'title' => esc_attr( $title_attribute ),
+					'alt'   => esc_attr( $img_alt ),
+				) ) . '</a>';
+			$image           .= '</figure>';
+
+  			echo $image;
+  		}
+	?>
+
+	<div class="entry-content clearfix">
+		<?php
+			the_excerpt();
+		?>
+	</div>
+
+	<?php spacious_entry_meta(); ?>
+
+	<?php
+	do_action( 'spacious_after_post_content' );
+   ?>
 </article>

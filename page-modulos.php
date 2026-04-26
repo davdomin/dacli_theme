@@ -2,7 +2,7 @@
 /* Template Name: Página de Módulos */
 get_header(); ?>
 
-<section class="section-padding" style="background: linear-gradient(to bottom, #f0f4ff, #ffffff);">
+<section class="section-padding" style="background: linear-gradient(to bottom, var(--gris-neutro), var(--blanco));">
     <div class="container">
         <div class="section-header" data-aos="fade-up" style="text-align:center; margin-bottom:60px;">
             <span class="badge" style="color:var(--turquesa); font-weight:800; text-transform:uppercase; letter-spacing:2px;">Ecosistema Dacli</span>

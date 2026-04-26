@@ -1,117 +1,518 @@
+/* ============================================================
+   DACLI THEME — Paleta de colores corporativa
+   ============================================================ */
 :root {
-    --azul-dacli: #2D7EC4;
+    --azul-dacli:    #2D7EC4;
     --azul-profundo: #2A3F7B;
-    --gris-neutro: #F6F7FC;
-    --turquesa: #2DC4B5;
-    --blanco: #FFFFFF;
+    --gris-neutro:   #F6F7FC;
+    --azul-glaciar:  #B2C3E6;
+    --turquesa:      #2DC4B5;
+    --blanco:        #FFFFFF;
+    --sombra-suave:  0 4px 20px rgba(42, 63, 123, 0.08);
+    --sombra-card:   0 8px 30px rgba(42, 63, 123, 0.10);
+    --radio-card:    14px;
 }
 
-/* Estructura General */
-.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: block; width: 100%; }
-
-/* Header */
-.site-header { background: var(--blanco); padding: 15px 0; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 2px 15px rgba(0,0,0,0.05); }
-.header-flex { display: flex; justify-content: space-between; align-items: center; }
-.nav-menu ul { display: flex; list-style: none; gap: 30px; align-items: center; margin: 0; }
-.nav-menu a { text-decoration: none; color: var(--azul-profundo); font-weight: 600; }
-.btn-nav-blue { background: var(--azul-dacli); color: white !important; padding: 10px 20px; border-radius: 8px; }
-
-/* Hero Section */
-.hero { padding: 180px 0 100px; text-align: center; background: radial-gradient(circle at top right, #f0f4ff, transparent); }
-.hero h1 { font-size: 3.5rem; color: var(--azul-profundo); margin: 20px 0; font-weight: 800; line-height: 1.2; }
-.hero-subtitle { max-width: 800px; margin: 0 auto 40px; font-size: 1.2rem; opacity: 0.8; }
-.hero-btns { display: flex; justify-content: center; gap: 20px; }
-
-/* Barra de Tecnologías (Aquí está el desorden de tu foto) */
-.tech-strip { background: var(--blanco); padding: 50px 0; text-align: center; border-top: 1px solid #eee; border-bottom: 1px solid #eee; }
-.tech-strip p { font-size: 0.9rem; font-weight: 700; color: #999; text-transform: uppercase; margin-bottom: 25px; letter-spacing: 1px; }
-.tech-logos { display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; align-items: center; }
-.tech-logos span { font-weight: 800; color: #cbd5e0; font-size: 1.2rem; transition: 0.3s; }
-.tech-logos span:hover { color: var(--azul-dacli); }
-
-/* Beneficios */
-.section-padding { padding: 100px 0; text-align: center; }
-.section-header h2 { font-size: 2.8rem; color: var(--azul-profundo); margin-bottom: 15px; }
-.benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 60px; }
-.benefit-card { background: var(--blanco); padding: 50px 30px; border-radius: 25px; box-shadow: 0 10px 40px rgba(0,0,0,0.03); transition: 0.3s; }
-.benefit-card:hover { transform: translateY(-10px); }
-.benefit-card h3 { color: var(--azul-dacli); margin: 20px 0 15px; font-size: 1.5rem; }
-
-/* Botones */
-.btn-premium { background: var(--azul-dacli); color: white; padding: 16px 35px; border-radius: 12px; text-decoration: none; font-weight: 700; box-shadow: 0 10px 20px rgba(45, 126, 196, 0.2); }
-.btn-outline { border: 2px solid var(--azul-dacli); color: var(--azul-dacli); padding: 14px 33px; border-radius: 12px; text-decoration: none; font-weight: 700; }
-
-/* --- FORMULARIO DACLI (Arreglo de desorden) --- */
-.wpforms-container { 
-    margin: 0 !important; 
-    width: 100% !important; 
+/* ============================================================
+   RESET GLOBAL
+   ============================================================ */
+body {
+    background-color: var(--gris-neutro) !important;
+    color: var(--azul-profundo);
+    font-family: 'Lato', sans-serif;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
 }
 
-/* Forzar que las filas no floten y se alineen */
-.wpforms-field-container, .wpforms-field {
-    width: 100% !important;
-    clear: both !important;
-    display: block !important;
+a {
+    color: var(--azul-dacli);
+    transition: color 0.25s ease;
+}
+a:hover { color: var(--azul-profundo); }
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--azul-profundo);
+    font-weight: 700;
 }
 
-/* Arreglo específico para Nombre y Apellido (First/Last) */
-.wpforms-field-name .wpforms-field-row {
-    display: flex !important; /* Usamos Flexbox para que queden alineados */
-    gap: 15px !important;
-    margin: 0 !important;
-    width: 100% !important;
+/* ============================================================
+   CONTENEDOR
+   ============================================================ */
+.container,
+.inner-wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    width: 100%;
 }
 
-.wpforms-field-name .wpforms-field-row-column {
-    flex: 1 !important;
-    width: auto !important;
-    margin: 0 !important;
-    float: none !important; /* Matamos el float que causa el desorden */
-}
-
-/* Estilo de los inputs */
-.wpforms-field input, 
-.wpforms-field textarea {
-    width: 100% !important;
-    box-sizing: border-box !important;
-    padding: 12px 15px !important;
-    border: 1px solid #ddd !important;
-    border-radius: 8px !important;
-    background: #fff !important;
-    font-family: inherit !important;
-}
-
-/* Etiquetas */
-.wpforms-field-label {
-    font-weight: 700 !important;
-    color: var(--azul-profundo) !important;
-    display: block !important;
-    margin-bottom: 8px !important;
-}
-
-/* Botón de envío centrado y bonito */
-.wpforms-submit-container {
-    text-align: center !important;
+/* ============================================================
+   HEADER — estilo lolimsa: blanco, sombra sutil, fijo
+   ============================================================ */
+#masthead,
+.site-header {
+    background: var(--blanco) !important;
+    border-bottom: 2px solid var(--azul-glaciar) !important;
+    box-shadow: 0 2px 16px rgba(42, 63, 123, 0.08) !important;
+    position: sticky !important;
+    top: 0;
+    z-index: 1000;
     padding: 0 !important;
 }
 
-button.wpforms-submit {
-    background-color: var(--azul-dacli) !important;
-    color: white !important;
-    padding: 15px 40px !important;
-    border: none !important;
+#header-text-nav-container {
+    border-bottom: none !important;
+}
+
+#header-text-nav-wrap {
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Título del sitio */
+#site-title a,
+h1#site-title a,
+h3#site-title a {
+    color: var(--azul-profundo) !important;
+    font-size: 1.8rem !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.5px;
+}
+#site-title a:hover { color: var(--azul-dacli) !important; }
+
+/* ============================================================
+   NAVEGACIÓN PRINCIPAL — azul, cero verde
+   ============================================================ */
+.main-navigation {
+    float: right;
+    padding-top: 0 !important;
+}
+
+.main-navigation li {
+    margin: 0 0 0 28px !important;
+}
+
+/* Links del menú principal */
+.main-navigation a,
+.main-navigation ul li a {
+    color: var(--azul-profundo) !important;
+    font-weight: 600 !important;
+    font-size: 15px !important;
+    letter-spacing: 0.02em;
+    padding: 6px 0;
+    position: relative;
+    line-height: 1.5 !important;
+}
+
+/* Underline animado al hover — estilo lolimsa */
+.main-navigation a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--azul-dacli);
+    transition: width 0.25s ease;
+}
+.main-navigation a:hover::after,
+.main-navigation li.current-menu-item > a::after,
+.main-navigation li.current_page_item > a::after {
+    width: 100%;
+}
+
+.main-navigation a:hover,
+.main-navigation ul li:hover > a,
+.main-navigation ul li.current-menu-item > a,
+.main-navigation ul li.current_page_item > a,
+.main-navigation ul li.current-menu-ancestor > a,
+.main-navigation ul li.current_page_ancestor > a {
+    color: var(--azul-dacli) !important;
+}
+
+/* Dropdown */
+.main-navigation ul li ul {
+    background: var(--blanco) !important;
+    border-top: 2px solid var(--azul-dacli) !important;
+    border-radius: 0 0 var(--radio-card) var(--radio-card);
+    box-shadow: var(--sombra-card) !important;
+    min-width: 200px;
+    padding: 8px 0;
+}
+
+.main-navigation ul li ul li {
+    border-bottom: 1px solid var(--gris-neutro) !important;
+    margin-left: 0 !important;
+}
+
+.main-navigation ul li ul li a {
+    color: var(--azul-profundo) !important;
+    font-size: 14px !important;
+    padding: 8px 16px !important;
+    font-weight: 500 !important;
+}
+
+.main-navigation ul li ul li a:hover,
+.main-navigation ul li ul li:hover > a,
+.main-navigation ul li ul li.current-menu-item > a {
+    color: var(--azul-dacli) !important;
+    background: var(--gris-neutro) !important;
+}
+.main-navigation ul li ul li a::after { display: none; }
+
+/* Botón CTA en menú */
+.main-navigation .tg-header-button-wrap.button-one a,
+.btn-nav-blue {
+    background: var(--azul-dacli) !important;
+    border: 2px solid var(--azul-dacli) !important;
+    border-radius: 8px !important;
+    color: var(--blanco) !important;
+    font-weight: 700 !important;
+    padding: 8px 20px !important;
+    transition: background 0.25s ease, transform 0.15s ease !important;
+}
+.main-navigation .tg-header-button-wrap.button-one a::after { display: none; }
+.main-navigation .tg-header-button-wrap.button-one a:hover {
+    background: var(--azul-profundo) !important;
+    border-color: var(--azul-profundo) !important;
+    color: var(--blanco) !important;
+    transform: translateY(-1px);
+}
+
+/* Menú hamburguesa móvil */
+.site-header .menu-toggle,
+.menu-toggle {
+    background: var(--azul-profundo) !important;
+    color: var(--blanco) !important;
+    border-radius: 6px;
+}
+.site-header .menu-toggle:hover { background: var(--azul-dacli) !important; }
+
+/* Menú móvil desplegado */
+.main-small-navigation li {
+    background: var(--azul-profundo) !important;
+}
+.main-small-navigation li:hover,
+.main-small-navigation ul > .current_page_item,
+.main-small-navigation ul > .current-menu-item {
+    background: var(--azul-dacli) !important;
+}
+
+/* Menú secundario (header top bar) */
+.small-menu a { color: var(--azul-profundo) !important; }
+.small-menu a:hover,
+.small-menu ul li.current-menu-item a,
+.small-menu ul li:hover > a { color: var(--azul-dacli) !important; }
+
+/* ============================================================
+   ICONO CARRITO
+   ============================================================ */
+.cart-value { background: var(--azul-dacli) !important; }
+
+/* ============================================================
+   BOTONES GLOBALES — azul, no verde
+   ============================================================ */
+.spacious-button,
+input[type="submit"],
+input[type="button"],
+input[type="reset"],
+button:not(.menu-toggle) {
+    background: var(--azul-dacli) !important;
+    color: var(--blanco) !important;
     border-radius: 8px !important;
     font-weight: 700 !important;
-    cursor: pointer !important;
-    width: 100% !important;
-    transition: 0.3s !important;
+    padding: 10px 28px !important;
+    border: none !important;
+    transition: background 0.25s ease, transform 0.15s ease !important;
+    cursor: pointer;
+}
+.spacious-button:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover,
+button:not(.menu-toggle):hover {
+    background: var(--azul-profundo) !important;
+    transform: translateY(-1px);
 }
 
-button.wpforms-submit:hover {
+.btn-premium {
+    background: var(--azul-dacli) !important;
+    color: var(--blanco) !important;
+    box-shadow: 0 8px 24px rgba(45, 126, 196, 0.35) !important;
+    border-radius: 10px !important;
+    font-weight: 700 !important;
+    padding: 14px 36px !important;
+    display: inline-block;
+    transition: all 0.25s ease !important;
+}
+.btn-premium:hover {
+    background: var(--azul-profundo) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(42, 63, 123, 0.35) !important;
+}
+
+.btn-outline {
+    border: 2px solid var(--azul-dacli) !important;
+    color: var(--azul-dacli) !important;
+    border-radius: 10px !important;
+    font-weight: 700 !important;
+    padding: 12px 32px !important;
+    background: transparent !important;
+    transition: all 0.25s ease !important;
+    display: inline-block;
+}
+.btn-outline:hover {
+    background: var(--azul-dacli) !important;
+    color: var(--blanco) !important;
+}
+
+/* ============================================================
+   CALL TO ACTION WIDGET
+   ============================================================ */
+.call-to-action-content-wrapper {
+    border-color: var(--azul-glaciar) var(--azul-glaciar) var(--azul-glaciar) var(--azul-dacli) !important;
+    background-color: var(--gris-neutro) !important;
+}
+.call-to-action-button {
+    background-color: var(--azul-dacli) !important;
+    color: var(--blanco) !important;
+}
+
+/* ============================================================
+   HERO SECTION
+   ============================================================ */
+.hero {
+    padding: 120px 0 80px;
+    text-align: center;
+    background: linear-gradient(135deg, var(--gris-neutro) 0%, #e8edf8 100%);
+    position: relative;
+    overflow: hidden;
+}
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -80px;
+    right: -80px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(45,126,196,0.08) 0%, transparent 70%);
+    border-radius: 50%;
+}
+.hero h1 {
+    font-size: 3.2rem !important;
+    color: var(--azul-profundo) !important;
+    font-weight: 800 !important;
+    line-height: 1.15 !important;
+    margin: 0 0 20px !important;
+}
+.hero p {
+    font-size: 1.15rem;
+    color: var(--azul-profundo);
+    opacity: 0.75;
+    max-width: 620px;
+    margin: 0 auto 36px;
+}
+
+/* ============================================================
+   SECCIONES
+   ============================================================ */
+.section-padding { padding: 80px 0; }
+
+.section-header {
+    text-align: center;
+    margin-bottom: 56px;
+}
+.section-header h2,
+.section-header h1 {
+    font-size: 2.2rem !important;
+    color: var(--azul-profundo) !important;
+    font-weight: 800 !important;
+    margin-bottom: 12px;
+}
+.section-header p {
+    color: var(--azul-profundo);
+    opacity: 0.65;
+    max-width: 640px;
+    margin: 0 auto;
+    font-size: 1.05rem;
+}
+
+/* Separador decorativo bajo títulos de sección */
+.section-header h2::after,
+.section-header h1::after {
+    content: '';
+    display: block;
+    width: 48px;
+    height: 3px;
+    background: var(--azul-dacli);
+    border-radius: 2px;
+    margin: 14px auto 0;
+}
+
+/* ============================================================
+   CARDS / BENEFICIOS — estilo lolimsa
+   ============================================================ */
+.benefit-card {
+    background: var(--blanco) !important;
+    border-radius: var(--radio-card) !important;
+    border: 1px solid var(--azul-glaciar) !important;
+    box-shadow: var(--sombra-suave) !important;
+    padding: 40px 28px !important;
+    transition: box-shadow 0.3s ease, transform 0.3s ease !important;
+}
+.benefit-card:hover {
+    box-shadow: var(--sombra-card) !important;
+    transform: translateY(-4px);
+}
+.benefit-card h3 {
+    color: var(--azul-dacli) !important;
+    font-size: 1.15rem !important;
+    font-weight: 700 !important;
+    margin-bottom: 10px;
+}
+.benefit-card p { color: var(--azul-profundo); opacity: 0.75; }
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 28px;
+}
+
+/* ============================================================
+   BARRA DE TECNOLOGÍAS
+   ============================================================ */
+.tech-strip {
+    background: var(--blanco) !important;
+    padding: 40px 0 !important;
+    border-top: 1px solid var(--azul-glaciar) !important;
+    border-bottom: 1px solid var(--azul-glaciar) !important;
+    text-align: center;
+}
+.tech-logos span {
+    font-weight: 800;
+    color: var(--azul-profundo);
+    opacity: 0.45;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    transition: opacity 0.25s ease;
+}
+.tech-logos span:hover { opacity: 1; color: var(--azul-dacli); }
+
+/* ============================================================
+   FORMULARIOS
+   ============================================================ */
+.wpforms-field input,
+.wpforms-field textarea,
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+    border: 1.5px solid var(--azul-glaciar) !important;
+    border-radius: 8px !important;
+    background: var(--blanco) !important;
+    color: var(--azul-profundo) !important;
+    transition: border-color 0.2s ease !important;
+}
+.wpforms-field input:focus,
+.wpforms-field textarea:focus,
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    border-color: var(--azul-dacli) !important;
+    outline: none !important;
+    box-shadow: 0 0 0 3px rgba(45,126,196,0.15) !important;
+}
+.wpforms-field-label,
+label { color: var(--azul-profundo) !important; font-weight: 600; }
+
+/* ============================================================
+   BADGES Y PILLS
+   ============================================================ */
+.badge-new,
+.badge {
+    background: rgba(45, 196, 181, 0.12);
+    color: var(--turquesa);
+    border: 1px solid rgba(45, 196, 181, 0.3);
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+/* ============================================================
+   PAGINACIÓN Y LINKS DE LECTURA
+   ============================================================ */
+.read-more,
+.more-link { color: var(--azul-dacli) !important; }
+.read-more:hover,
+.more-link:hover { color: var(--azul-profundo) !important; }
+
+.pagination span { background-color: var(--azul-dacli) !important; }
+.pagination a span:hover {
+    color: var(--azul-dacli) !important;
+    border-color: var(--azul-dacli) !important;
+}
+
+a#scroll-up { background-color: var(--azul-dacli) !important; }
+
+/* Breadcrumbs */
+.breadcrumb a:hover { color: var(--azul-dacli) !important; }
+
+/* Widget title underline */
+.widget-title span { border-bottom-color: var(--azul-dacli) !important; }
+
+/* Testimonials */
+.widget_testimonial .testimonial-icon:before { color: var(--azul-dacli) !important; }
+.widget_testimonial .testimonial-post {
+    border-color: var(--azul-dacli) var(--azul-glaciar) var(--azul-glaciar) var(--azul-glaciar) !important;
+}
+
+/* ============================================================
+   SLIDER
+   ============================================================ */
+#featured-slider .slider-read-more-button { background-color: var(--azul-dacli) !important; }
+#featured-slider .slider-read-more-button:hover { background-color: var(--azul-profundo) !important; }
+#controllers a:hover,
+#controllers a.active { background-color: var(--azul-dacli) !important; }
+
+/* ============================================================
+   FOOTER — fondo azul profundo, texto claro
+   ============================================================ */
+.footer-widgets-wrapper {
     background-color: var(--azul-profundo) !important;
+    border-top: 3px solid var(--azul-dacli) !important;
+}
+.footer-widgets-area h3.widget-title { color: var(--blanco) !important; }
+.footer-widgets-area,
+.footer-widgets-area p { color: rgba(255,255,255,0.7) !important; }
+.footer-widgets-area a { color: rgba(255,255,255,0.8) !important; }
+.footer-widgets-area a:hover { color: var(--turquesa) !important; }
+
+.footer-socket-wrapper {
+    background-color: #1e2e5a !important;
+    border-top: 1px solid rgba(255,255,255,0.08) !important;
+}
+.footer-socket-wrapper .copyright,
+.footer-socket-wrapper .copyright a { color: rgba(255,255,255,0.55) !important; }
+.footer-socket-wrapper .copyright a:hover { color: var(--turquesa) !important; }
+.footer-socket-wrapper .small-menu a { color: rgba(255,255,255,0.55) !important; }
+.footer-socket-wrapper .small-menu a:hover { color: var(--turquesa) !important; }
+
+/* ============================================================
+   PÁGINA — eliminar caja/sombra del tema base
+   ============================================================ */
+#page {
+    max-width: 100% !important;
+    box-shadow: none !important;
+    background: transparent !important;
 }
 
-/* Esconder textos pequeños de "First" y "Last" para que se vea más limpio */
-.wpforms-field-sublabel {
-    display: none !important;
-}
+/* ============================================================
+   BÚSQUEDA EN HEADER
+   ============================================================ */
+.header-action .search-wrapper:hover .fa { color: var(--azul-dacli) !important; }

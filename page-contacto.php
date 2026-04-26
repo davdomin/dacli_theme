@@ -2,7 +2,7 @@
 /* Template Name: Página Contacto */
 get_header(); ?>
 
-<section class="section-padding" style="padding-top: 150px; background: #fdfdfd; min-height: 100vh;">
+<section class="section-padding" style="padding-top: 150px; background: var(--gris-neutro); min-height: 100vh;">
     <div class="container">
         <div style="text-align: center; margin-bottom: 60px;">
             <span style="color:var(--turquesa); font-weight:800; text-transform:uppercase; letter-spacing:2px; font-size: 0.9rem;">Atención Personalizada</span>
