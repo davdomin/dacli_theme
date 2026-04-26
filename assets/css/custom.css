@@ -1,6 +1,3 @@
-/* ============================================================
-   DACLI THEME — Paleta de colores corporativa
-   ============================================================ */
 :root {
     --azul-dacli:    #2D7EC4;
     --azul-profundo: #2A3F7B;
@@ -13,9 +10,6 @@
     --radio-card:    14px;
 }
 
-/* ============================================================
-   RESET GLOBAL
-   ============================================================ */
 body {
     background-color: var(--gris-neutro) !important;
     color: var(--azul-profundo);
@@ -35,9 +29,6 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
 }
 
-/* ============================================================
-   CONTENEDOR
-   ============================================================ */
 .container,
 .inner-wrap {
     max-width: 1200px;
@@ -46,9 +37,6 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
 }
 
-/* ============================================================
-   HEADER — estilo lolimsa: blanco, sombra sutil, fijo
-   ============================================================ */
 #masthead,
 .site-header {
     background: var(--blanco) !important;
@@ -58,10 +46,12 @@ h1, h2, h3, h4, h5, h6 {
     top: 0;
     z-index: 1000;
     padding: 0 !important;
+    margin-bottom: 0 !important; /* Añadido: elimina margen inferior */
 }
 
 #header-text-nav-container {
     border-bottom: none !important;
+    margin-bottom: 0 !important; /* Añadido: elimina margen inferior */
 }
 
 #header-text-nav-wrap {
@@ -72,7 +62,50 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: space-between;
 }
 
-/* Título del sitio */
+/* Eliminar espacios extra después del header */
+#main {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+}
+
+/* Corregir el primer elemento después del header */
+.site-content,
+#content {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+}
+
+/* Para páginas que usan .entry-header */
+.entry-header {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+/* Ajuste específico para el hero si existe */
+.hero {
+    padding: 80px 0 80px; /* Reducido de 120px a 80px */
+    text-align: center;
+    background: linear-gradient(135deg, var(--gris-neutro) 0%, #e8edf8 100%);
+    position: relative;
+    overflow: hidden;
+    margin-top: 0 !important;
+}
+
+/* Para cualquier contenedor principal */
+#primary,
+#secondary,
+.main-content-inner {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+/* Eliminar espacios en blanco comunes */
+.clearfix,
+.single-page,
+.page-content {
+    margin-top: 0 !important;
+}
+
 #site-title a,
 h1#site-title a,
 h3#site-title a {
@@ -83,9 +116,6 @@ h3#site-title a {
 }
 #site-title a:hover { color: var(--azul-dacli) !important; }
 
-/* ============================================================
-   NAVEGACIÓN PRINCIPAL — azul, cero verde
-   ============================================================ */
 .main-navigation {
     float: right;
     padding-top: 0 !important;
@@ -95,7 +125,6 @@ h3#site-title a {
     margin: 0 0 0 28px !important;
 }
 
-/* Links del menú principal */
 .main-navigation a,
 .main-navigation ul li a {
     color: var(--azul-profundo) !important;
@@ -107,7 +136,6 @@ h3#site-title a {
     line-height: 1.5 !important;
 }
 
-/* Underline animado al hover — estilo lolimsa */
 .main-navigation a::after {
     content: '';
     position: absolute;
@@ -133,7 +161,6 @@ h3#site-title a {
     color: var(--azul-dacli) !important;
 }
 
-/* Dropdown */
 .main-navigation ul li ul {
     background: var(--blanco) !important;
     border-top: 2px solid var(--azul-dacli) !important;
@@ -163,7 +190,6 @@ h3#site-title a {
 }
 .main-navigation ul li ul li a::after { display: none; }
 
-/* Botón CTA en menú */
 .main-navigation .tg-header-button-wrap.button-one a,
 .btn-nav-blue {
     background: var(--azul-dacli) !important;
@@ -182,7 +208,6 @@ h3#site-title a {
     transform: translateY(-1px);
 }
 
-/* Menú hamburguesa móvil */
 .site-header .menu-toggle,
 .menu-toggle {
     background: var(--azul-profundo) !important;
@@ -191,7 +216,6 @@ h3#site-title a {
 }
 .site-header .menu-toggle:hover { background: var(--azul-dacli) !important; }
 
-/* Menú móvil desplegado */
 .main-small-navigation li {
     background: var(--azul-profundo) !important;
 }
@@ -201,20 +225,13 @@ h3#site-title a {
     background: var(--azul-dacli) !important;
 }
 
-/* Menú secundario (header top bar) */
 .small-menu a { color: var(--azul-profundo) !important; }
 .small-menu a:hover,
 .small-menu ul li.current-menu-item a,
 .small-menu ul li:hover > a { color: var(--azul-dacli) !important; }
 
-/* ============================================================
-   ICONO CARRITO
-   ============================================================ */
 .cart-value { background: var(--azul-dacli) !important; }
 
-/* ============================================================
-   BOTONES GLOBALES — azul, no verde
-   ============================================================ */
 .spacious-button,
 input[type="submit"],
 input[type="button"],
@@ -268,9 +285,6 @@ button:not(.menu-toggle):hover {
     color: var(--blanco) !important;
 }
 
-/* ============================================================
-   CALL TO ACTION WIDGET
-   ============================================================ */
 .call-to-action-content-wrapper {
     border-color: var(--azul-glaciar) var(--azul-glaciar) var(--azul-glaciar) var(--azul-dacli) !important;
     background-color: var(--gris-neutro) !important;
@@ -280,26 +294,6 @@ button:not(.menu-toggle):hover {
     color: var(--blanco) !important;
 }
 
-/* ============================================================
-   HERO SECTION
-   ============================================================ */
-.hero {
-    padding: 120px 0 80px;
-    text-align: center;
-    background: linear-gradient(135deg, var(--gris-neutro) 0%, #e8edf8 100%);
-    position: relative;
-    overflow: hidden;
-}
-.hero::before {
-    content: '';
-    position: absolute;
-    top: -80px;
-    right: -80px;
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, rgba(45,126,196,0.08) 0%, transparent 70%);
-    border-radius: 50%;
-}
 .hero h1 {
     font-size: 3.2rem !important;
     color: var(--azul-profundo) !important;
@@ -315,9 +309,6 @@ button:not(.menu-toggle):hover {
     margin: 0 auto 36px;
 }
 
-/* ============================================================
-   SECCIONES
-   ============================================================ */
 .section-padding { padding: 80px 0; }
 
 .section-header {
@@ -339,7 +330,6 @@ button:not(.menu-toggle):hover {
     font-size: 1.05rem;
 }
 
-/* Separador decorativo bajo títulos de sección */
 .section-header h2::after,
 .section-header h1::after {
     content: '';
@@ -351,9 +341,6 @@ button:not(.menu-toggle):hover {
     margin: 14px auto 0;
 }
 
-/* ============================================================
-   CARDS / BENEFICIOS — estilo lolimsa
-   ============================================================ */
 .benefit-card {
     background: var(--blanco) !important;
     border-radius: var(--radio-card) !important;
@@ -380,9 +367,6 @@ button:not(.menu-toggle):hover {
     gap: 28px;
 }
 
-/* ============================================================
-   BARRA DE TECNOLOGÍAS
-   ============================================================ */
 .tech-strip {
     background: var(--blanco) !important;
     padding: 40px 0 !important;
@@ -400,9 +384,6 @@ button:not(.menu-toggle):hover {
 }
 .tech-logos span:hover { opacity: 1; color: var(--azul-dacli); }
 
-/* ============================================================
-   FORMULARIOS
-   ============================================================ */
 .wpforms-field input,
 .wpforms-field textarea,
 input[type="text"],
@@ -427,9 +408,6 @@ textarea:focus {
 .wpforms-field-label,
 label { color: var(--azul-profundo) !important; font-weight: 600; }
 
-/* ============================================================
-   BADGES Y PILLS
-   ============================================================ */
 .badge-new,
 .badge {
     background: rgba(45, 196, 181, 0.12);
@@ -444,9 +422,6 @@ label { color: var(--azul-profundo) !important; font-weight: 600; }
     display: inline-block;
 }
 
-/* ============================================================
-   PAGINACIÓN Y LINKS DE LECTURA
-   ============================================================ */
 .read-more,
 .more-link { color: var(--azul-dacli) !important; }
 .read-more:hover,
@@ -460,29 +435,20 @@ label { color: var(--azul-profundo) !important; font-weight: 600; }
 
 a#scroll-up { background-color: var(--azul-dacli) !important; }
 
-/* Breadcrumbs */
 .breadcrumb a:hover { color: var(--azul-dacli) !important; }
 
-/* Widget title underline */
 .widget-title span { border-bottom-color: var(--azul-dacli) !important; }
 
-/* Testimonials */
 .widget_testimonial .testimonial-icon:before { color: var(--azul-dacli) !important; }
 .widget_testimonial .testimonial-post {
     border-color: var(--azul-dacli) var(--azul-glaciar) var(--azul-glaciar) var(--azul-glaciar) !important;
 }
 
-/* ============================================================
-   SLIDER
-   ============================================================ */
 #featured-slider .slider-read-more-button { background-color: var(--azul-dacli) !important; }
 #featured-slider .slider-read-more-button:hover { background-color: var(--azul-profundo) !important; }
 #controllers a:hover,
 #controllers a.active { background-color: var(--azul-dacli) !important; }
 
-/* ============================================================
-   FOOTER — fondo azul profundo, texto claro
-   ============================================================ */
 .footer-widgets-wrapper {
     background-color: var(--azul-profundo) !important;
     border-top: 3px solid var(--azul-dacli) !important;
@@ -503,16 +469,10 @@ a#scroll-up { background-color: var(--azul-dacli) !important; }
 .footer-socket-wrapper .small-menu a { color: rgba(255,255,255,0.55) !important; }
 .footer-socket-wrapper .small-menu a:hover { color: var(--turquesa) !important; }
 
-/* ============================================================
-   PÁGINA — eliminar caja/sombra del tema base
-   ============================================================ */
 #page {
     max-width: 100% !important;
     box-shadow: none !important;
     background: transparent !important;
 }
 
-/* ============================================================
-   BÚSQUEDA EN HEADER
-   ============================================================ */
 .header-action .search-wrapper:hover .fa { color: var(--azul-dacli) !important; }
