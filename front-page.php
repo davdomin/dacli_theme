@@ -1,55 +1,56 @@
 <?php get_header(); ?>
 
-<main class="landing-page">
-
-    <section class="hero" style="background-color: var(--azul-profundo); color: var(--blanco); padding: 80px 0;">
-        <div class="container text-center">
-            <h1>Excelencia tecnológica para laboratorios que priorizan el bienestar de sus pacientes.</h1>
-            <p>Optimice cada proceso con resultados de excelente calidad y rapidez.</p>
-            <a href="#contacto" class="btn-dacli" style="background-color: var(--turquesa-medico);">Solicitar Demo</a>
+<section class="hero">
+    <div class="container">
+        <span class="badge" style="color:var(--turquesa); font-weight:800; text-transform:uppercase; letter-spacing:2px;">Tecnología Médica de Precisión</span>
+        <h1>Excelencia tecnológica para laboratorios clínicos</h1>
+        <p class="hero-subtitle">Optimizamos los procesos de su laboratorio con un sistema inteligente, seguro y fácil de usar. Diseñado para el bienestar de sus pacientes.</p>
+        <div class="hero-btns">
+            <a href="#beneficios" class="btn-premium">Descubrir Beneficios</a>
+            <a href="<?php echo home_url('/nosotros'); ?>" class="btn-outline">Saber más</a>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section id="modulos" class="section-padding">
-        <div class="container">
-            <h2 class="text-center">Nuestros Módulos</h2>
-            <div class="modulos-grid">
-                <?php 
-                $modulos = [
-                    'Toma de pedido (Recepción)', 'Toma de muestras', 'Facturación (Homologada)',
-                    'Presupuestos', 'Órdenes de trabajo', 'Gestión de compras y Retenciones',
-                    'Gestor de resultados', 'Envío por WhatsApp/Correo', 'Reportes Financieros',
-                    'Gestión de usuarios', 'Respaldo de datos (Backup)'
-                ];
-                foreach ($modulos as $modulo) : ?>
-                    <div class="modulo-card">
-                        <i class="icon-check"></i> p><?php echo $modulo; ?></p>
-                    </div>
-                <?php endforeach; ?>
+<section class="tech-strip">
+    <div class="container">
+        <p>Potenciado por las mejores tecnologías mundiales</p>
+        <div class="tech-logos">
+            <span>SQL SERVER</span>
+            <span>ORACLE</span>
+            <span>MICROSOFT</span>
+            <span>PHP</span>
+            <span>MYSQL</span>
+            <span>WHATSAPP</span>
+        </div>
+    </div>
+</section>
+
+<section id="beneficios" class="section-padding">
+    <div class="container">
+        <div class="section-header">
+            <h2>¿Por qué elegir DACLI para su laboratorio?</h2>
+            <p>Soluciones diseñadas para laboratorios que buscan escalar su eficiencia.</p>
+        </div>
+
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <span style="font-size:3rem;">🚀</span>
+                <h3>Automatización Total</h3>
+                <p>Reduzca los tiempos de entrega de resultados eliminando procesos manuales y errores humanos.</p>
+            </div>
+            <div class="benefit-card">
+                <span style="font-size:3rem;">🔒</span>
+                <h3>Máxima Seguridad</h3>
+                <p>Sus datos están protegidos con respaldos automáticos y encriptación de nivel médico.</p>
+            </div>
+            <div class="benefit-card">
+                <span style="font-size:3rem;">📱</span>
+                <h3>Conectividad Inmediata</h3>
+                <p>Notifique a sus pacientes directamente a través de WhatsApp y correo electrónico.</p>
             </div>
         </div>
-    </section>
-
-    <section id="tecnologias" style="background-color: var(--gris-neutro);">
-        <div class="container text-center">
-            <h3>Tecnologías Robustas</h3>
-            <div class="tech-logos">
-                <span>SQL SERVER</span> | <span>ORACLE</span> | <span>SITEF</span> | <span>MICROSOFT</span> | <span>PHP</span> | <span>WHATSAPP</span>
-            </div>
-        </div>
-    </section>
-
-    <section id="nosotros" class="section-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <h2>¿Quiénes somos?</h2>
-                    <p>dAcli es un sistema de atención integral diseñado para adaptarse a las necesidades de su laboratorio clínico...</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-</main>
+    </div>
+</section>
 
 <?php get_footer(); ?>
